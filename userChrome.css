@@ -1,13 +1,12 @@
-
 :root.left #tabbar {
   direction: ltr;
   overflow-x: hidden;
 }
 
-  /* Hide horizontal tabs at the top of the window */
+/* Hide horizontal tabs at the top of the window */
 #tabbrowser-tabs {
-    visibility: collapse !important;
-  }
+  visibility: collapse !important;
+}
 
 #titlebar {
   visibility: collapse;
@@ -15,8 +14,8 @@
 #TabsToolbar {
   visibility: collapse;
 }
-#nav-bar { 
-  padding-right: 150px; 
+#nav-bar {
+  padding-right: 150px;
   padding-left: 10px;
 }
 #TabsToolbar .titlebar-buttonbox-container {
@@ -27,38 +26,9 @@
   right: 0;
 }
 
-#urlbar-background {
-  background: black !important;
+#sidebar-header {
+  display: none;
 }
-
-
-/* Makes panels, menupopups, urlbar and searchbar rounded */
-
-/* Modify the rounding size here */
-:root{ --uc-menupopup-border-radius: 20px }
-
-panel[type="autocomplete-richlistbox"],
-menupopup,
-.panel-arrowcontent{
-  -moz-appearance: none !important;
-  border-radius: var(--uc-menupopup-border-radius) !important;
-  overflow: -moz-hidden-unscrollable !important;
-}
-
-/* The rounding is also applied to searchbar and urlbar to look consistent */
-searchbar#searchbar,
-#urlbar-background{
-  border-radius: var(--uc-menupopup-border-radius) !important
-}
-
-/* Reposition the panel-arrow  */
-panel[type="arrow"]{ margin-inline-end: calc(-10px - var(--uc-menupopup-border-radius)) !important; }
-.panel-arrow{ margin-inline: var(--uc-menupopup-border-radius) !important; }
-
-/*Center text in urlbar*/
-#urlbar:not([focused]) #urlbar-input, /* ID for Firefox 70 */
-#urlbar:not([focused]) .urlbar-input{ text-align: center !important; }
-
 
 /* Sidebery */
 #main-window[titlepreface*="🦊 "] .tabbrowser-tab {
@@ -86,7 +56,8 @@ panel[type="arrow"]{ margin-inline-end: calc(-10px - var(--uc-menupopup-border-r
   background-color: var(--toolbar-bgcolor);
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+  #sidebar-header {
   visibility: collapse;
 }
 
@@ -98,50 +69,58 @@ See the above repository for updates as well as full license text. */
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
   --uc-sidebar-width: 48px !important;
-  --uc-sidebar-hover-width: 250px;
+  --uc-sidebar-hover-width: 350px;
   --uc-autohide-sidebar-delay: 200ms; /* Wait 0.3s before hiding sidebar */
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
   max-width: var(--uc-sidebar-width) !important;
-  z-index:1;
+  z-index: 1;
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar-splitter {
-  display: none
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+  > #sidebar-splitter {
+  display: none;
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar {
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+  > #sidebar {
   transition: min-width 75ms linear var(--uc-autohide-sidebar-delay) !important;
   min-width: var(--uc-sidebar-width) !important;
   will-change: min-width;
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > #sidebar{
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover
+  > #sidebar {
   min-width: var(--uc-sidebar-hover-width) !important;
-  transition-delay: 0ms !important
+  transition-delay: 0ms !important;
 }
 
 /* Add sidebar divider and give it background */
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar,
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > #sidebar-header {
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+  > #sidebar,
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+  > #sidebar-header {
   background-color: var(--toolbar-bgcolor) !important;
-/*  border-inline: 1px solid var(--sidebar-border-color) !important;*/
+  /*  border-inline: 1px solid var(--sidebar-border-color) !important;*/
   border-inline: 1px solid var(--chrome-content-separator-color) !important;
   border-inline-width: 0px 1px;
 }
-#sidebar-box[positionend]{
-  direction: rtl
+#sidebar-box[positionend] {
+  direction: rtl;
 }
-#sidebar-box[positionend] > *{
-  direction: ltr
-}
-
-#sidebar-box[positionend]:-moz-locale-dir(rtl){
-  direction: ltr
-}
-#sidebar-box[positionend]:-moz-locale-dir(rtl) > *{
-  direction: rtl
+#sidebar-box[positionend] > * {
+  direction: ltr;
 }
 
+#sidebar-box[positionend]:-moz-locale-dir(rtl) {
+  direction: ltr;
+}
+#sidebar-box[positionend]:-moz-locale-dir(rtl) > * {
+  direction: rtl;
+}
+
+#tabbrowser-tabpanels {
+  background-color: #181a1b !important;
+}
